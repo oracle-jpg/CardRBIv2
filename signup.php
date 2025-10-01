@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
 
     try {
         // Optional: Check if email already exists
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM Staff WHERE email = ?");
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM Client WHERE email = ?");
         $stmt->execute([$email]);
         if ($stmt->fetchColumn() > 0) {
             die("Email already registered.");
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
 
         // Insert new staff member
         $stmt = $pdo->prepare("
-            INSERT INTO Staff (email, password_hash, first_name, last_name) 
+            INSERT INTO Client (email, password_hash, first_name, last_name) 
             VALUES (?, ?, ?, ?)
         ");
         $stmt->execute([$email, $passwordHash, $firstName, $lastName]);

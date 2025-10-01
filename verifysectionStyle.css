@@ -1,8 +1,26 @@
-/* Reset and base styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color Palette based on CARD RBI Logo */
+:root {
+    --primary-blue: #004D99; /* Deep, professional blue */
+    --primary-yellow: #FFD700; /* Vibrant yellow */
+    --secondary-blue: #006699; /* Slightly lighter blue for accents */
+    --light-blue-background: #F4F8FB; /* A soft, very light blue for the background */
+    --dark-text: #222; /* Darker text for readability */
+    --medium-text: #555; /* Medium text for paragraphs and labels */
+    --accent-yellow: #FFC94A; /* A slightly softer yellow accent */
+    --border-color: #E0E0E0; /* Light gray border */
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--light-blue-background);
+    margin: 0;
+    color: var(--dark-text);
 }
 
 header {
@@ -12,13 +30,6 @@ header {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-}
-body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: var(--light-blue-background);
-    margin: 0;
-    color: var(--dark-text);
-    background-color: rgb(249, 249, 249);
 }
 
 .logo-container img {
@@ -44,15 +55,14 @@ nav ul li a:hover {
     color: var(--primary-yellow); /* Yellow hover color */
 }
 
-
 h1 {
   text-align: center;
   margin-bottom: 2rem;
   color: var(--primary-blue);
 }
-
+/*
 .instruct {
-    background: var(--primary-blue); /* Blue background */
+    background: var(--primary-blue); 
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -66,7 +76,36 @@ h1 {
   color: #fff;
   margin-top: 5px;
   margin-bottom: 5px;
+}***/
+
+.loanIndicator{
+  background-color: #004D99;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  border-radius: 13px;
+  padding: 10px;
+  width: fit-content;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 15px;
+  box-shadow: 0 2px 12px rgba(0, 77, 153, 0.08);
 }
+
+.instruction{
+  background-color: #004D99;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  border-radius: 13px;
+  padding: 15px;
+  width: fit-content;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 15px;
+  box-shadow: 0 2px 12px rgba(0, 77, 153, 0.08);
+}
+
 /* Drag-and-drop container styles */
 
 .drop-zone {
@@ -81,7 +120,6 @@ h1 {
   background-color: #fff;
   width: 500px;
 }
-
 
 .drop-zone.hover {
   border-color: var(--primary-blue);
@@ -168,22 +206,3 @@ h1 {
   }
 }
 
-
-
-.dropzone {
-    width: 300px;
-    height: 200px;
-    border: 2px dashed #aaa;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    font-size: 16px;
-    color: #555;
-    margin: 50px auto;
-    transition: background-color 0.3s;
-  }
-  .dropzone.dragover {
-    background-color: #f0f0f0;
-  }
