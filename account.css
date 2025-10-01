@@ -1,0 +1,313 @@
+:root {
+    --primary-blue: #004D99; /* Deep blue for main headings and elements */
+    --primary-yellow: #FFD700; /* Vibrant yellow for highlights and buttons */
+    --soft-blue-background: #E5EFF7; /* A very soft, professional light blue background */
+    --dark-text: #333333;
+    --medium-text: #1f477c; /* A dark blue-gray for paragraphs and labels */
+    --light-text: #A8B5C5; /* A soft, light blue-gray for icons and subtle text */
+    --border-color: #DDE2E7;
+    --success-green: #28A745;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--soft-blue-background);
+    color: var(--dark-text);
+}
+
+.login-container {
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 90%;
+}
+
+/* Left Column - Login Form */
+.login-form-column {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo-card-rbi {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-card-rbi img {
+    height: 50px;
+    margin-right: 8px;
+}
+
+.logo-card-rbi span {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--primary-blue);
+}
+
+.company-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--medium-text);
+}
+
+.login-form-column h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.login-form-column p {
+    font-size: 0.95em;
+    color: var(--medium-text);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--medium-text);
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: calc(100% - 40px);
+    padding: 12px 15px 12px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--dark-text);
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--light-text);
+}
+
+.input-wrapper .password-toggle {
+    right: 15px;
+    left: auto;
+    cursor: pointer;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(0, 77, 153, 0.2);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-blue);
+}
+
+.form-options a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #003366;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.95em;
+    color: var(--medium-text);
+}
+
+.signup-link a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Right Column - Welcome Section */
+.welcome-column {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #023c76 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.welcome-column p, .welcome-column h3 {
+    color: #fff;
+}
+
+.welcome-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 350px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-card .icon-illustration {
+    width: 120px;
+    height: 120px;
+    background-color: var(--primary-yellow);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-illustration i {
+    font-size: 60px;
+    color: var(--primary-blue);
+    z-index: 2;
+}
+
+.welcome-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.welcome-card p {
+    font-size: 0.95em;
+    margin-bottom: 30px;
+    color: var(--medium-text);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--primary-yellow);
+    color: var(--dark-text);
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #e6c200;
+}
+
+/* Background shapes for welcome column */
+.background-shape-1 {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+    filter: blur(20px);
+}
+
+.background-shape-2 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    bottom: -80px;
+    right: -80px;
+    filter: blur(20px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 95%;
+        max-width: 500px;
+    }
+    .login-form-column, .welcome-column {
+        padding: 30px;
+    }
+    .login-form-column h2 {
+        font-size: 1.8em;
+    }
+    .welcome-column {
+        display: none;
+    }
+}

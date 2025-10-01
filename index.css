@@ -1,0 +1,216 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color Palette based on CARD RBI Logo */
+:root {
+    --primary-blue: #004D99; /* Deep, professional blue */
+    --primary-yellow: #FFD700; /* Vibrant yellow */
+    --secondary-blue: #006699; /* Slightly lighter blue for accents */
+    --light-blue-background: #F4F8FB; /* A soft, very light blue for the background */
+    --dark-text: #222; /* Darker text for readability */
+    --medium-text: #555; /* Medium text for paragraphs and labels */
+    --accent-yellow: #FFC94A; /* A slightly softer yellow accent */
+    --border-color: #E0E0E0; /* Light gray border */
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--light-blue-background);
+    margin: 0;
+    color: var(--dark-text);
+}
+
+header {
+    background: #fff; /* White background for a clean look */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.logo-container img {
+    height: 48px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--secondary-blue); /* Blue text for navigation links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-yellow); /* Yellow hover color */
+}
+
+.action {
+    background: transparent; /* Clearer background */
+    padding: 1.5rem 2rem;
+    display: left;
+    justify-content: flex-end;
+}
+
+.action p {
+    margin: 0;
+    font-weight: 500;
+    color: var(--primary-blue); /* Blue text */
+}
+
+.upload {
+    background: var(--primary-blue); /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.upload:hover {
+    background: #003366; /* Darker blue on hover */
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); /* Blue gradient for a calm, professional feel */
+    color: #fff; /* White text for contrast */
+    padding: 4rem 2rem 6rem 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.brand-highlight {
+    color: var(--accent-yellow); /* A softer yellow highlight */
+    font-weight: 700;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto 2rem auto;
+    max-width: 1000px;
+    position: relative;
+    z-index: 2;
+}
+
+.features .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 77, 153, 0.08); /* Blue shadow */
+    padding: 2rem 1.5rem;
+    flex: 1 1 0;
+    min-width: 220px;
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+
+.features .card:hover {
+    box-shadow: 0 8px 24px rgba(0, 77, 153, 0.16);
+}
+
+.features h3 {
+    color: var(--primary-blue); /* Blue heading */
+    margin-bottom: 0.5rem;
+}
+
+.cta {
+    background: var(--primary-blue); /* Blue background */
+    color: #fff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-radius: 16px;
+    margin: 2rem auto;
+    max-width: 700px;
+    box-shadow: 0 2px 12px rgba(0, 77, 153, 0.08);
+}
+
+.cta .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--primary-yellow); /* Yellow button */
+    color: var(--primary-blue); /* Blue text on button */
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cta .btn:hover {
+    background: #fff;
+    color: var(--primary-blue);
+}
+
+footer {
+    background: var(--primary-blue); /* Blue footer */
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer-info p {
+    margin: 0.2rem 0;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: var(--primary-yellow); /* Yellow icons */
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .features {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .features {
+        margin-top: 1rem;
+    }
+    .cta {
+        margin: 1rem;
+    }
+}
+
+
+
+
+
