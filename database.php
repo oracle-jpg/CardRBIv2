@@ -3,7 +3,7 @@
 $host = "localhost";
 $dbname = "Microfinance_System";
 $username = "root";   // change if needed
-$password = "passwordko";       // change if you have a MySQL password
+$password = "admin";       // change if you have a MySQL password
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
@@ -12,4 +12,3 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 ?>
-

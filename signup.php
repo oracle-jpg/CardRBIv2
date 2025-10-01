@@ -5,27 +5,44 @@ ini_set('display_errors', 1);
 require 'database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
-    $email = trim($_POST['email']);
+    // Sanitize and validate inputs
+    $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
     $password = $_POST['password'];
     $firstName = trim($_POST['first_name']);
     $lastName = trim($_POST['last_name']);
 
-    // 👉 Hash the password before saving
+    if (!$email) {
+        die("Invalid email address.");
+    }
+    if (empty($password) || empty($firstName) || empty($lastName)) {
+        die("Please fill all fields.");
+    }
+
+    // Hash the password
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
     try {
+        // Optional: Check if email already exists
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM Staff WHERE email = ?");
+        $stmt->execute([$email]);
+        if ($stmt->fetchColumn() > 0) {
+            die("Email already registered.");
+        }
+
+        // Insert new staff member
         $stmt = $pdo->prepare("
             INSERT INTO Staff (email, password_hash, first_name, last_name) 
             VALUES (?, ?, ?, ?)
         ");
         $stmt->execute([$email, $passwordHash, $firstName, $lastName]);
 
-        // Redirect to login page after success
+        // Redirect after successful signup
         header("Location: login.html?signup=success");
         exit;
     } catch (PDOException $e) {
-        echo "Signup failed: " . $e->getMessage();
+        // Log error instead of displaying
+        error_log($e->getMessage());
+        echo "Signup failed. Please try again.";
     }
 }
 ?>
-
