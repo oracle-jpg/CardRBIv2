@@ -1,5 +1,9 @@
 <?php
 // login.php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 require 'database.php';
 
@@ -9,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($password)) {
         try {
-            $stmt = $pdo->prepare("SELECT * FROM Client WHERE email = ?");
+            $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
             $stmt->execute([$email]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -24,9 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         } catch (PDOException $e) {
             // Handle database errors
             $error = "An error occurred. Please try again later.";
+            echo $e;
         }
     } else {
         $error = "Please enter a valid email and password.";
+        echo $error;
     }
 }
 ?>

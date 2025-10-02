@@ -15,7 +15,7 @@
         <div class="login-form-column">
             <div class="logo-section">
                 <div class="logo-card-rbi">
-                    <img src="https://www.cardmri.com/rbi/wp-content/uploads/2020/01/CMRBI-1.png" alt="CARD RBI Logo"> 
+                    <a href="index.php"><img src="https://www.cardmri.com/rbi/wp-content/uploads/2020/01/CMRBI-1.png" alt="CARD RBI Logo"> </a>
                 </div>
             </div>
 
@@ -65,12 +65,12 @@
 
     <script>
         // Redirect to index.html after login
-        
+        /*
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             window.location.href = 'verifySection.php';
         });
-        
+        */
 
       // Toggle password visibility
       document.getElementById('togglePasswordIcon').addEventListener('click', function() {

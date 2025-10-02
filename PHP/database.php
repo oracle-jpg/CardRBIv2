@@ -1,6 +1,6 @@
 <?php
 // database.php
-$host = "ULOOKPDesktop";
+$host = "ulookpdesktop";
 $dbname = "rbi_microfinancedb";
 $username = "edzArc";   
 $password = "admin";      
@@ -8,6 +8,8 @@ $password = "admin";
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }

@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
 
     try {
         // Optional: Check if email already exists
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM Client WHERE email = ?");
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
         $stmt->execute([$email]);
         if ($stmt->fetchColumn() > 0) {
             die("Email already registered.");
@@ -31,17 +31,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
 
         // Insert new staff member
         $stmt = $pdo->prepare("
-            INSERT INTO Client (email, password_hash, first_name, last_name) 
+            INSERT INTO users (email, password_hash, first_name, last_name) 
             VALUES (?, ?, ?, ?)
         ");
         $stmt->execute([$email, $passwordHash, $firstName, $lastName]);
 
         // Redirect after successful signup
-        header("Location: login.php?signup=success");
+        header("Location: CardRBIv2/login.php?signup=success");
         exit;
     } catch (PDOException $e) {
         // Log error instead of displaying
         error_log($e->getMessage());
+        echo $e;
         echo "Signup failed. Please try again.";
     }
 }
