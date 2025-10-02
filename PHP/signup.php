@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
         $stmt->execute([$email, $passwordHash, $firstName, $lastName]);
 
         // Redirect after successful signup
-        header("Location: login.html?signup=success");
+        header("Location: login.php?signup=success");
         exit;
     } catch (PDOException $e) {
         // Log error instead of displaying

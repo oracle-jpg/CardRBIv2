@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
             if ($user && password_verify($password, $user['password_hash'])) {
                 session_regenerate_id(true);
                 $_SESSION['first_name'] = $user['first_name'];
-                header("Location: verifySection.html");
+                header("Location: verifySection.php");
                 exit;
             } else {
                 $error = "Invalid email or password!";

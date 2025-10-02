@@ -44,7 +44,7 @@
 
             
             <div class="signup-link">
-                Don't have an account? <a href="signup.html">Sign up</a>
+                Don't have an account? <a href="signup.php">Sign up</a>
             </div>
             
         </div>
@@ -58,18 +58,19 @@
                 </div>
                 <h3>Welcome to CARD RBI</h3>
                 <p>Empowering communities through microfinance: supporting families, small businesses, and brighter futures.</p>
-                <a href="index.html" class="btn-secondary">Learn More</a>
+                <a href="index.php" class="btn-secondary">Learn More</a>
             </div>
         </div>
     </div>
 
     <script>
         // Redirect to index.html after login
+        
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            window.location.href = 'verifySection.html';
+            window.location.href = 'verifySection.php';
         });
-
+        
 
       // Toggle password visibility
       document.getElementById('togglePasswordIcon').addEventListener('click', function() {

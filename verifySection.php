@@ -1,3 +1,7 @@
+<?php
+    include("header.html");
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,21 +17,6 @@
     
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="https://www.cardmri.com/rbi/wp-content/uploads/2020/01/CMRBI-1.png" alt="CARD RBI Logo" class="card-logo" />
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <div class="loanIndicator">
         <p>Next loan due date: 12/30/2025</p>
     </div>

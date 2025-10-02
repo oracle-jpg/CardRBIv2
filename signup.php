@@ -94,7 +94,7 @@
       </form>
 
       <div class="signup-link">
-        Already have an account? <a href="login.html">Sign in</a>
+        Already have an account? <a href="login.php">Sign in</a>
       </div>
     </div>
 
@@ -108,7 +108,7 @@
         </div>
         <h3>Join CARD RBI</h3>
         <p>Be part of our mission to empower communities through microfinance services.</p>
-        <a href="index.html" class="btn-secondary">Back to Home</a>
+        <a href="index.php" class="btn-secondary">Back to Home</a>
       </div>
     </div>
   </div>

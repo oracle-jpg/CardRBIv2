@@ -1,4 +1,6 @@
-
+<?php
+    include("header.html");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,26 +17,10 @@
 
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="https://www.cardmri.com/rbi/wp-content/uploads/2020/01/CMRBI-1.png" alt="CARD RBI Logo" class="card-logo" />
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <section class="action">
         <div>
             <p>Upload a picture of your loan usage: </p><br>
-            <a href="login.html"><button class="upload">Loan Verification</button></a>
+            <a href="login.php"><button class="upload">Loan Verification</button></a>
         </div>
     </section>
 
