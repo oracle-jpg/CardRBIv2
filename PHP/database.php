@@ -1,6 +1,6 @@
 <?php
 // database.php
-$host = "localhost";
+$host = "ULOOKPDesktop";
 $dbname = "Microfinance_System";
 $username = "root";   // change if needed
 $password = "admin";       // change if you have a MySQL password
