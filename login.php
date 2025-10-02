@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +43,13 @@
                     </div>
                 </div>
                 <button type="submit" name="login" class="btn-primary">Sign in</button>
+                
+                
             </form>
+
+            <?php
+                echo $_SESSION["error_message"];
+            ?>
 
             
             <div class="signup-link">

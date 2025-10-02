@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
         $stmt->execute([$email, $passwordHash, $firstName, $lastName]);
 
         // Redirect after successful signup
-        header("Location: CardRBIv2/login.php?signup=success");
+        header("Location: http://localhost/CardRBIv2/login.php?signup=success");
         exit;
     } catch (PDOException $e) {
         // Log error instead of displaying

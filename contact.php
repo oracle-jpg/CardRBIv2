@@ -1,3 +1,6 @@
+<?php
+    include("header.html");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +10,6 @@
     <link rel="stylesheet" href="styles/contact.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="https://www.cardmri.com/rbi/wp-content/uploads/2020/01/CMRBI-1.png" alt="CARD RBI Logo" class="card-logo" />
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>  
-    </header>
-
     <div class="contact">
         <p><strong>CARD RBI</strong></p>
         <p>Address: P. Guevarra St., Corner Aguirre St., Brgy. Poblacion II, Sta. Cruz, Laguna</p>
