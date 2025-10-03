@@ -1,3 +1,6 @@
+<?php
+    include("header.html");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,20 +15,9 @@
     <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="https://www.cardmri.com/rbi/wp-content/uploads/2020/01/CMRBI-1.png" alt="CARD RBI Logo" class="card-logo" />
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <div>
+        <p>Recently Logged Members</p>
+    </div>
     <table style="border: 1px solid black; width: 100%; border-collapse: collapse; text-align: center;">
         <tr>
             <th style="border: 1px solid black;">ID</th>
