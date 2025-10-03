@@ -1,4 +1,5 @@
     <!-- Header -->
+     <link rel="stylesheet" href="styles/header.css" >
     <header>
         <div class="logo-container">
             <a href="index.php"><img src="https://www.cardmri.com/rbi/wp-content/uploads/2020/01/CMRBI-1.png" alt="CARD RBI Logo" class="card-logo" /></aa>
