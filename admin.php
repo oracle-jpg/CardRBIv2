@@ -33,8 +33,7 @@
             <th>Last Name</th>
             <th>Role</th>
             <th>Email</th>
-            <th>Created_account_at</th>
-            
+            <th>Created_account_at</th>      
         </tr>
         <?php foreach ($users as $user):?>
         <tr>

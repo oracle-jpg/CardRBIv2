@@ -15,7 +15,7 @@
                         $firstName = $_SESSION['first_name'];
                         $lastName = $_SESSION['last_name'];
                         echo "<li><a href=\"PHP/logout.php\">Log out</a></li>";
-                        echo "<li><a href=\"#\"> Hello  $firstName $lastName</a></li>";
+                        echo "<li><a href=\"#\"> Hello $firstName $lastName</a></li>";
                     }
                 ?>
                 
