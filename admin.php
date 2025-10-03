@@ -1,8 +1,11 @@
 <?php
-    include("header.html");
+    session_start(); 
+    include("header.php");
     require("PHP/database.php");
 
-    $stmt = $pdo->prepare("SELECT * FROM users");
+    if ($_SESSION['role'] != 'admin'){ header("Location: index.php");}
+
+    $stmt = $pdo->prepare("SELECT * FROM users ORDER BY created_at DESC");
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

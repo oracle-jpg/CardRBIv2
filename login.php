@@ -46,7 +46,9 @@
             </form>
 
             <?php
-                echo $errormsg
+                if (!empty($_SESSION["error_message"])){
+                    echo $_SESSION["error_message"];
+                }
             ?>
             
             <div class="signup-link">

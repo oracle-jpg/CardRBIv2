@@ -1,7 +1,6 @@
 <?php
-    include("header.html");
     session_start();
-    
+    include("header.php");
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@
         </div>
     </section>
 
-    <?php if ($_SESSION['role'] === 'admin'): ?>
+    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
         <section class="action">
             <div>
                 <p>Go to admin page: </p><br>

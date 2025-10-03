@@ -1,11 +1,16 @@
 <?php
 // login.php
+session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-session_start();
+
 require 'database.php';
+
+if (isset($_SESSION['role'])) {
+    header('Location: verifySection.php');
+}
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
@@ -22,11 +27,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
             if ($user && password_verify($password, $user['password_hash'])) {
                 session_regenerate_id(true);
                 $_SESSION['first_name'] = $user['first_name'];
+                $_SESSION['last_name'] = $user['last_name'];
+            
 
                 if ($user['role'] === 'admin') {
                     $_SESSION['role'] = "admin";
                     header("Location: http://localhost/CardRBIv2/index.php");
                     exit;
+                }
+                else{
+                    $_SESSION['role'] = "client";
                 }
 
                 header("Location: http://localhost/CardRBIv2/verifySection.php");
