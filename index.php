@@ -1,5 +1,7 @@
 <?php
     include("header.html");
+    session_start();
+    
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +25,16 @@
             <a href="login.php"><button class="upload">Loan Verification</button></a>
         </div>
     </section>
+
+    <?php if ($_SESSION['role'] === 'admin'): ?>
+        <section class="action">
+            <div>
+                <p>Go to admin page: </p><br>
+                <a href="admin.php"><button class="upload">Admin Page</button></a>
+            </div>
+        </section>
+    <?php endif; ?>
+    
 
     <!-- Hero Section -->
     <section class="hero" id="about">

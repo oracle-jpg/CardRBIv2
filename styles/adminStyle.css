@@ -1,3 +1,4 @@
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
@@ -18,10 +19,11 @@
 
 body {
     font-family: 'Inter', Arial, sans-serif;
-    background: var(--primary-blue);
+    background: var(--light-blue-background);
     margin: 0;
     color: var(--dark-text);
 }
+
 
 header {
     background: #fff; /* White background for a clean look */
@@ -54,17 +56,46 @@ nav ul li a {
 nav ul li a:hover {
     color: var(--primary-yellow); /* Yellow hover color */
 }
+.action {
+    background: transparent; /* Clearer background */
+    padding: 1.5rem 2rem;
+    display: left;
+    justify-content: flex-end;
+}
 
+.forTable {
+    background-color:#004D99;
+    font-family: 'Inter', Arial, sans-serif;   
+    padding: 20px; 
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
 
-.contact{
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  padding: 30px;
-  line-height: 1.8;
-  color: var(--dark-text);
-  background-color:var(--light-blue-background);
-  border-radius: 15px;
-  width: fit-content;
+/*Admin*/
+
+/* Style the table */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove spacing between cells */
+  font-family: Arial, sans-serif;
+}
+
+/* Style table headers */
+th {
+  background-color: #f2f2f2;
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Style table cells */
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Add hover effect for rows */
+tr:hover {
+  background-color:#ecebeb;
 }

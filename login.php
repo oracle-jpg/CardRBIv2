@@ -43,14 +43,11 @@
                     </div>
                 </div>
                 <button type="submit" name="login" class="btn-primary">Sign in</button>
-                
-                
             </form>
 
             <?php
-                echo $_SESSION["error_message"];
+                echo $errormsg
             ?>
-
             
             <div class="signup-link">
                 Don't have an account? <a href="signup.php">Sign up</a>

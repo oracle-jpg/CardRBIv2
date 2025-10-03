@@ -1,5 +1,10 @@
 <?php
     include("header.html");
+    require("PHP/database.php");
+
+    $stmt = $pdo->prepare("SELECT * FROM users");
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,61 +17,32 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/adminStyle.css">
 </head>
 <body>
-    <div>
+    <div class="forTable">
         <p>Recently Logged Members</p>
     </div>
-    <table style="border: 1px solid black; width: 100%; border-collapse: collapse; text-align: center;">
+    <table>
         <tr>
-            <th style="border: 1px solid black;">ID</th>
-            <th style="border: 1px solid black;">First Name</th>
-            <th style="border: 1px solid black;">Last Name</th>
-            <th style="border: 1px solid black;">Created_account_at</th>
-            <th style="border: 1px solid black;">Remaining Loan</th>
-            <th style="border: 1px solid black;">...</th>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Created_account_at</th>
+            
         </tr>
+        <?php foreach ($users as $user):?>
         <tr>
-            <td style="border: 1px solid black;">01</td>
-            <td style="border: 1px solid black;">Edzel</td>
-            <td style="border: 1px solid black;">Arciga</td>
-            <td style="border: 1px solid black;">9/30/2025</td>
-            <td style="border: 1px solid black;">10,000 PHP</td>
-            <td style="border: 1px solid black;">..</td>
+            <td><?= $user['id'];?></td>
+            <td><?= htmlspecialchars($user['first_name']); ?></td>
+            <td><?= htmlspecialchars($user['last_name']); ?></td>
+            <td><?= $user['role'];?></td>
+            <td><?= htmlspecialchars($user['email']); ?></td>
+            <td><?= $user['created_at'];?></td>
         </tr>
-        <tr>
-            <td style="border: 1px solid black;">02</td>
-            <td style="border: 1px solid black;">Archie</td>
-            <td style="border: 1px solid black;">Pagtalunan</td>
-            <td style="border: 1px solid black;">10/01/2025</td>
-            <td style="border: 1px solid black;">30,000 PHP</td>
-            <td style="border: 1px solid black;">.</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black;">03</td>
-            <td style="border: 1px solid black;">Rafael</td>
-            <td style="border: 1px solid black;">N/A</td>
-            <td style="border: 1px solid black;">10/02/2025</td>
-            <td style="border: 1px solid black;">90,000 PHP</td>
-            <td style="border: 1px solid black;">.</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">.</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">...</td>
-            <td style="border: 1px solid black;">.</td>
-        </tr>
+        <?php endforeach;?>
     </table>
 
     
